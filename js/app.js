@@ -1,7 +1,7 @@
 const JAKARTA_OFFSET_MINUTES = 7 * 60;
 const JAKARTA_OFFSET_MS = JAKARTA_OFFSET_MINUTES * 60 * 1000;
 const STORAGE_KEY = 'bangal-realtime-age:dob';
-const DEFAULT_DOB = jakartaDate(1995, 8, 19, 0, 0, 0);
+const DEFAULT_DOB = jakartaDate(2005, 8, 19, 10, 0, 0);
 
 const elements = {
   input: document.getElementById('dob-input'),
