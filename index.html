@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Umur Real-time — Bang AL</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="title-group">
+        <h1>Umur Real-time — Bang AL</h1>
+        <p class="subtitle">Zona waktu: Asia/Jakarta (UTC+7)</p>
+      </div>
+    </header>
+
+    <section class="controls" aria-labelledby="control-heading">
+      <h2 id="control-heading" class="visually-hidden">Pengaturan tanggal lahir</h2>
+      <label class="control" for="dob-input">
+        <span class="control-label">Tanggal lahir (WIB)</span>
+        <input id="dob-input" type="datetime-local" required />
+      </label>
+      <div class="control-actions">
+        <button type="button" id="set-dob" class="btn primary">Set Tanggal Lahir</button>
+        <button type="button" id="reset-dob" class="btn ghost">Reset</button>
+      </div>
+    </section>
+
+    <section class="age-section" aria-labelledby="age-heading">
+      <div class="age-header">
+        <h2 id="age-heading">Umur saat ini</h2>
+        <span class="age-status" id="age-status" role="status" aria-live="polite"></span>
+      </div>
+      <div class="age-grid" aria-live="polite">
+        <article class="tile">
+          <span class="label">Tahun</span>
+          <span class="value" data-age="years">0</span>
+        </article>
+        <article class="tile">
+          <span class="label">Hari</span>
+          <span class="value" data-age="days">0</span>
+        </article>
+        <article class="tile">
+          <span class="label">Jam</span>
+          <span class="value" data-age="hours">00</span>
+        </article>
+        <article class="tile">
+          <span class="label">Menit</span>
+          <span class="value" data-age="minutes">00</span>
+        </article>
+        <article class="tile">
+          <span class="label">Detik</span>
+          <span class="value" data-age="seconds">00</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="countdown" aria-labelledby="countdown-heading">
+      <div class="countdown-header">
+        <h2 id="countdown-heading">Ulang tahun berikutnya dalam</h2>
+        <span class="countdown-days"><span data-count="days">0</span> hari</span>
+      </div>
+      <div class="countdown-time" aria-live="polite">
+        <span class="count" data-count="hours">00</span>
+        <span class="separator">:</span>
+        <span class="count" data-count="minutes">00</span>
+        <span class="separator">:</span>
+        <span class="count" data-count="seconds">00</span>
+      </div>
+      <div class="progress-wrapper" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progress menuju ulang tahun berikutnya">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="badge" id="birthday-badge" hidden>HBD! Selamat Ulang Tahun, Bang AL!</div>
+    </section>
+
+    <footer class="footer">
+      <div class="now" aria-live="polite">Sekarang (WIB): <span id="now-time">-</span></div>
+      <a class="repo-link" href="https://github.com/bangal-realtime-age" target="_blank" rel="noopener">Repo GitHub</a>
+    </footer>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
